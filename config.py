@@ -1,39 +1,53 @@
-tob_items = {
-    'scythe-of-vitur-uncharged': 1, # getracker link, weight (out of 19)
-    'ghrazi-rapier': 2,
-    'sanguinesti-staff-uncharged': 2,
-    'justiciar-faceguard': 2,
-    'justiciar-chestguard': 2,
-    'justiciar-legguards': 2,
-    'avernic-defender-hilt': 8
+# items dictionaries store id to relative weight
+TOB_ITEMS = {
+    '22486': 1,
+    '22324': 2,
+    '22481': 2,
+    '22326': 2,
+    '22327': 2,
+    '22328': 2,
+    '22477': 8,
 }
-cox_items = {
-    'dexterous-prayer-scroll': 20,
-    'arcane-prayer-scroll': 20,
-    'twisted-buckler': 4,
-    'dragon-hunter-crossbow': 4,
-    'dinh-s-bulwark': 3,
-    'ancestral-hat': 3,
-    'ancestral-robe-top': 3,
-    'ancestral-robe-bottom': 3,
-    'dragon-claws': 3,
-    'elder-maul': 2,
-    'kodai-insignia': 2,
-    'twisted-bow': 2
+
+COX_ITEMS = {
+    '21034': 20,
+    '21079': 20,
+    '21000': 4,
+    '21012': 4,
+    '21015': 3,
+    '21018': 3,
+    '21021': 3,
+    '21024': 3,
+    '13652': 3,
+    '21003': 2,
+    '21043': 2,
+    '20997': 2,
 }
-nightmare_armor = {
-    'nightmare-staff': 3, #weight out of 10
-    'inquisitor-s-great-helm': 2,
-    'inquisitor-s-hauberk': 2,
-    'inquisitor-s-plateskirt': 2,
-    'inquisitor-s-mace': 1
+
+NIGHTMARE_ARMOR = {
+    '24422': 3,
+    '24419': 2,
+    '24420': 2,
+    '24421': 2,
+    '24417': 1,
 }
-nightmare_orbs = {
-    'eldritch-orb': 1, #weight out of 3
-    'harmonised-orb': 1,
-    'volatile-orb': 1
+
+NIGHTMARE_ORBS = {
+    '24517': 1,
+    '24511': 1,
+    '24514': 1,
 }
-item_names = { # item ID (string) to item name (for Runelite/Wiki API)
+
+NEX_ITEMS = {
+    '26235': 3,
+    '26372': 2,
+    '26376': 2,
+    '26378': 2,
+    '26380': 2,
+    '26370': 1,
+}
+
+ITEM_LIST = { # item ID (string) to item name (for Runelite/Wiki API)
     '22486': 'Scythe of Vitur',
     '22324': 'Ghrazi Rapier',
     '22481': 'Sanguinesti Staff',
@@ -61,49 +75,46 @@ item_names = { # item ID (string) to item name (for Runelite/Wiki API)
     '21024': 'Ancestral Robe Bottom',
     '13652': 'Dragon Claws',
     '21003': 'Elder Maul',
-    '21043': 'Kodai Insignia'
+    '21043': 'Kodai Insignia',
+    '26235': 'Zaryte Vambraces',
+    '26372': 'Nihil Horn',
+    '26374': 'Zaryte Crossbow',
+    '26376': 'Torva Full Helm (damaged)',
+    '26382': 'Torva Full Helm',
+    '26378': 'Torva Platebody (damaged)',
+    '26384': 'Torva Platebody',
+    '26380': 'Torva Platelegs (damaged)',
+    '26386': 'Torva Platelegs',
+    '26370': 'Ancient Hilt',
+    '26233': 'Ancient Godsword',
+    '26394': 'Bandosian Components',
+    '11798': 'Godsword Blade',
+    '11785': 'Armadyl Crossbow',
+    '26231': 'Nihil Shard',
 }
-item_names_legacy = { # store better formatted item names (for GEtracker and code work reasons)
-    'scythe-of-vitur-uncharged': 'Scythe of Vitur',
-    'ghrazi-rapier': 'Ghrazi Rapier',
-    'sanguinesti-staff-uncharged': 'Sanguinesti Staff',
-    'justiciar-faceguard': 'Justiciar Faceguard',
-    'justiciar-chestguard': 'Justiciar Chestguard',
-    'justiciar-legguards': 'Justiciar Legguards',
-    'avernic-defender-hilt': 'Avernic Defender Hilt',
-    'nightmare-staff': 'Nightmare Staff',
-    'inquisitor-s-great-helm': "Inquisitor's Great Helm",
-    'inquisitor-s-hauberk': "Inquisitor's Hauberk",
-    'inquisitor-s-plateskirt': "Inquisitor's Plateskirt",
-    'inquisitor-s-mace': "Inquisitor's Mace",
-    'eldritch-orb': 'Eldritch Orb',
-    'harmonised-orb': 'Harmonised Orb',
-    'volatile-orb': 'Volatile Orb',
-    'twisted-bow': 'Twisted Bow',
-    'elysian-spirit-shield': 'Elysian Spirit Shield',
-    'dexterous-prayer-scroll': 'Dexterous Prayer Scroll',
-    'arcane-prayer-scroll': 'Arcane Prayer Scroll',
-    'twisted-buckler': 'Twisted Buckler',
-    'dragon-hunter-crossbow': 'Dragon Hunter Crossbow',
-    'dinh-s-bulwark': "Dinh's Bulwark",
-    'ancestral-hat': 'Ancestral Hat',
-    'ancestral-robe-top': 'Ancestral Robe Top',
-    'ancestral-robe-bottom': 'Ancestral Robe Bottom',
-    'dragon-claws': 'Dragon Claws',
-    'elder-maul': 'Elder Maul',
-    'kodai-insignia': 'Kodai Insignia',
-}
-id_to_legacy = dict(zip(item_names.keys(), item_names_legacy.keys()))
-item_prices = dict(item_names_legacy) # copy this for the names/ids, we'll replace the names with prices later
 
-TOB_WEIGHT_DENO = sum(tob_items.values())
-NIGHTMARE_ARMOR_DENO = sum(nightmare_armor.values())
-COX_WEIGHT_DENO = sum(cox_items.values())
-NIGHTMARE_ORBS_DENO = sum(nightmare_orbs.values())
-NIGHTMARE_ARMOR_CHANCE = 1/192 # 1/120
-NIGHTMARE_ORB_CHANCE = 1/960 # 1/600
+ITEM_UPGRADES = {
+    '26372': ('26374', (('11785', 1), ('26231', 250))), # nihil horn -> zaryte crossbow
+    '26376': ('26382', (('26394', 1),)), # torva full helm (damaged) -> torva full helm
+    '26378': ('26384', (('26394', 2),)), # torva platebody (damaged) -> torva platebody
+    '26380': ('26386', (('26394', 2),)), # torva platelegs (damaged) -> torva platelegs
+    '26370': ('26233', (('11798', 1),)), # ancient hilt -> ancient godsword
+}
+
+TOB_WEIGHT_DENO = sum(TOB_ITEMS.values())
 TOB_DROP_CHANCE = 0.10665 # uses average of 0.5 deaths per raid
-NIGHTMARE_KPH = 7
-TOB_KPH = 2.7
+TOB_KPH = 2.7 # trio
+
+COX_WEIGHT_DENO = sum(COX_ITEMS.values())
 COX_PTS_PER_ITEM = 867600
 COX_PTS_PER_HOUR = 70000
+
+NIGHTMARE_ARMOR_DENO = sum(NIGHTMARE_ARMOR.values())
+NIGHTMARE_ORBS_DENO = sum(NIGHTMARE_ORBS.values())
+NIGHTMARE_ARMOR_CHANCE = 1/192
+NIGHTMARE_ORB_CHANCE = 1/960
+NIGHTMARE_KPH = 7
+
+NEX_WEIGHT_DENO = sum(NEX_ITEMS.values())
+NEX_DROP_CHANCE = 1/43
+NEX_KPH = 5.3 # duo
