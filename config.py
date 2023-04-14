@@ -47,6 +47,16 @@ NEX_ITEMS = {
     '26370': 1,
 }
 
+TOA_ITEMS = {
+    '26219': 7,
+    '25975': 7,
+    '25985': 3,
+    '27226': 2,
+    '27229': 2,
+    '27232': 2,
+    '27277': 1,
+}
+
 ITEM_LIST = { # item ID (string) to item name (for Runelite/Wiki API)
     '22486': 'Scythe of Vitur',
     '22324': 'Ghrazi Rapier',
@@ -91,6 +101,17 @@ ITEM_LIST = { # item ID (string) to item name (for Runelite/Wiki API)
     '11798': 'Godsword Blade',
     '11785': 'Armadyl Crossbow',
     '26231': 'Nihil Shard',
+    '26219': "Osmumten's Fang",
+    '25975': 'Lightbearer',
+    '25985': "Elidinis' Ward",
+    '27226': 'Masori Mask',
+    '27235': 'Masori Mask (f)',
+    '27229': 'Masori Body',
+    '27238': 'Masori Body (f)',
+    '27232': 'Masori Chaps',
+    '27241': 'Masori Chaps (f)',
+    '27269': 'Armadylean Plate',
+    '27277': "Tumeken's Shadow (uncharged)",
 }
 
 ITEM_UPGRADES = {
@@ -99,6 +120,9 @@ ITEM_UPGRADES = {
     '26378': ('26384', (('26394', 2),)), # torva platebody (damaged) -> torva platebody
     '26380': ('26386', (('26394', 2),)), # torva platelegs (damaged) -> torva platelegs
     '26370': ('26233', (('11798', 1),)), # ancient hilt -> ancient godsword
+    '27226': ('27235', (('27269', 1),)), # masori mask -> masori mask (f)
+    '27229': ('27238', (('27269', 4),)), # masori body -> masori body (f)
+    '27232': ('27241', (('27269', 3),)), # masori chaps -> masori chaps (f)
 }
 
 TOB_WEIGHT_DENO = sum(TOB_ITEMS.values())
@@ -118,3 +142,6 @@ NIGHTMARE_KPH = 7
 NEX_WEIGHT_DENO = sum(NEX_ITEMS.values())
 NEX_DROP_CHANCE = 1/43
 NEX_KPH = 5.3 # duo
+
+TOA_WEIGHT_DENO = sum(TOA_ITEMS.values())
+
